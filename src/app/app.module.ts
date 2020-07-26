@@ -8,7 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+import { Service } from './api/service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatToolbarModule,
     MatTableModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
