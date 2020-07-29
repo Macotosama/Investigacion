@@ -1,0 +1,10 @@
+<h1 mat-dialog-litle>Eliminar</h1>
+<div mat-dialog-content>
+    <mat-label>Desea eliminar a {{cliente.name}}?</mat-label>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="close()">No confirmo</button>
+    <button mat-raised-button color="warn" 
+    (click)="eliminarCliente()">Confirmo</button>
+</div>

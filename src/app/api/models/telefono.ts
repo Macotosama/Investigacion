@@ -1,6 +1,10 @@
 export interface Telefono {
-  id: number;
-  numero1: number;
-  numero2: number;
-  nombre: string;
+  _id: string;
+  name: string;
+  firsLastName: string;
+  secondLastName: string; 
+  email: string;
+  phone: number;
+  phone2: number;
+  profetion: string;
 }

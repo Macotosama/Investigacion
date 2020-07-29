@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Response } from './models/response';
 import { Telefono } from './models/telefono';
 
+
 const httpOption = {
   headers: new HttpHeaders({
     'Contend-Type': 'aplication/json'
@@ -13,20 +14,28 @@ const httpOption = {
 @Injectable({
   providedIn: 'root'
 })
-
 export class Service {
-  urlTelefonos:string = '';
-
+  private url: string = 'http://localhost:4000/api/customers';
+  private urlEdit: string = 'http://localhost:4000/api/update';
+  private urlDelet: string = 'http://localhost:4000/api/remove';
+  private urlAdd: string = 'http://localhost:4000/api/add';
   constructor(
-    private _http:HttpClient
-  ) { }
-  
-  loginSavePos(cliente: Telefono):Observable<Response>{
-    return this._http.post<Response>(this.urlTelefonos, cliente, httpOption);
+    private _http: HttpClient
+  ){}
+
+  get(): Observable<Response> {
+    return this._http.get<Response>(this.url);
   }
 
-  loginSaveGet():Observable<Response>{
-    return this._http.get<Response>(this.urlTelefonos);
+  add(cliente: Telefono):Observable<Response>{
+    return this._http.post<Response>(this.urlAdd, cliente, httpOption);
   }
 
+  delete(id: string):Observable<Response>{
+    return this._http.delete<Response>(`${this.urlDelet}/${id}`);
+  }
+
+  edit(cliente: Telefono,id: string):Observable<Response>{
+    return this._http.put<Response>(`${this.urlEdit}/${id}`, cliente, httpOption);
+  }
 }

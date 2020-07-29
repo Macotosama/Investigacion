@@ -1,0 +1,37 @@
+<h1 mat-dialog-litle>Editar usuario</h1>
+<div mat-dialog-content>
+    <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput [(ngModel)]="nombre" maxlength="50" minlength="1">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Apellido 1</mat-label>
+        <input matInput [(ngModel)]="apellido1" maxlength="50" minlength="1">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Apellido 2</mat-label>
+        <input matInput [(ngModel)]="apellido2" maxlength="50" minlength="1">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Numero 1</mat-label>
+        <input matInput [(ngModel)]="numero1" maxlength="8" minlength="8">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Numero 2</mat-label>
+        <input matInput [(ngModel)]="numero2" maxlength="8" minlength="8">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="email" maxlength="50" minlength="4">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Profesion</mat-label>
+        <input matInput [(ngModel)]="profesion" maxlength="50" minlength="1">
+    </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="close()">Cancelar</button>
+    <button mat-raised-button color="primary" 
+    (click)="valiEntradas()">Guardar</button>
+</div>
