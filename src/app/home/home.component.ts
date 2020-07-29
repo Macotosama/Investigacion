@@ -18,6 +18,10 @@ export class HomeComponent implements OnInit {
   'numero2', 'email', 'profecion', 'actions'];
   readonly with: string = '600px';
   readonly with2: string = '300px';
+  public nombreF: string = '';
+  public apellido1F: string = '';
+  public apellido2F: string = '';
+
   constructor(
     private api: Service,
     public dialog: MatDialog,
@@ -61,5 +65,26 @@ export class HomeComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       this.get();
     });
+  }
+
+  find() {
+    if (this.nombreF === ''){
+      this.nombreF = 'NULL';
+    }
+
+    if (this.apellido1F === ''){
+      this.apellido1F = 'NULL';
+    }
+
+    if (this.apellido2F === ''){
+      this.apellido2F = 'NULL';
+    }
+
+    this.api.find(this.nombreF, this.apellido1F, this.apellido2F).subscribe(responses => {
+      this.lst = responses.Customers;
+    })
+    this.nombreF = '';
+    this.apellido1F = '';
+    this.apellido2F = '';
   }
 }

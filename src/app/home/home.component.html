@@ -6,9 +6,25 @@
         </mat-toolbar>
     </div>
     <div>
-        <button mat-fab color="primary" (click)="add()" class="agregar" aria-label="Example icon button with a delete icon">
-            <mat-icon>add</mat-icon>
-        </button>
+        <div>
+            <button mat-fab color="primary" (click)="add()"
+            class="agregar" aria-label="Example icon button with a delete icon">
+                <mat-icon>add</mat-icon>
+            </button>
+            <mat-form-field class="filtro">
+                <mat-label>Nombre</mat-label>
+                <input matInput [(ngModel)]="nombreF" maxlength="50">
+            </mat-form-field>
+            <mat-form-field class="filtro">
+                <mat-label>Nombre</mat-label>
+                <input matInput [(ngModel)]="apellido1F" maxlength="50">
+            </mat-form-field>
+            <mat-form-field class="filtro">
+                <mat-label>Nombre</mat-label>
+                <input matInput [(ngModel)]="apellido2F" maxlength="50">
+            </mat-form-field>
+            <button mat-raised-button class="filtro" (click)="find()">Buscar</button>
+        </div>
         <table mat-table [dataSource] = 'lst' class="mat-elevation-z4">
             <ng-container matColumnDef = "nombre">
                 <th mat-header-cell *matHeaderCellDef>Nombre</th>
